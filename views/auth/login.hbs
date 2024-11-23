@@ -2,12 +2,13 @@
   <h2 class="mt-5">Iniciar Sesión</h2>
   <form action="/login" method="POST">
     <div class="form-group">
-      <label for="name">Name</label>
+      <label for="email">Correo Electrónico</label>
       <input
-        type="name"
+        type="email"
         class="form-control"
-        id="name"
-        name="name"
+        id="email"
+        name="email"
+        value="{{email}}"
         required
       />
     </div>
@@ -20,6 +21,9 @@
         name="password"
         required
       />
+    </div>
+    <div class="mb-3">
+      <small class="text-danger">{{error}}</small>
     </div>
     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
   </form>

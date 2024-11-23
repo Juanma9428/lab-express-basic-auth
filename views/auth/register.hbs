@@ -23,14 +23,13 @@
         class="form-control {{#if errors.password}}is-invalid{{/if}}"
         id="password"
         name="password"
-
-      />
+        />
       {{#if errors.password}}
         <div class="invalid-feedback">
           {{errors.password}}
         </div>
       {{/if}}
+    <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
     </div>
-    <button type="submit" class="btn btn-primary">Registrarse</button>
   </form>
 </div>
