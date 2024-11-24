@@ -33,6 +33,7 @@ module.exports.doRegister = (req, res, next) => {
       }
     });
 };
+
   
 module.exports.login = (req, res, next) => {
     res.render("auth/login");
@@ -47,13 +48,22 @@ module.exports.login = (req, res, next) => {
                 req.session.userId = user.id; // genero cookie y session
                 res.redirect("/profile");
               } else {
-                console.log("Email o contraseña incorrectos"); // contraseña incorrecta
-                renderWithErrors();
+                res.render("auth/login", {
+                  errors: {
+                    error: "Email o contraseña incorrectos",
+                    email: req.body.email,                        // Mensaje de error para el usuario
+                  },
+                });
+                
               }
             });
           } else {
-            console.log("Email o contraseña incorrectos"); // no existe usuario con ese email
-            renderWithErrors();
+            res.render("auth/login", {
+              errors: {
+                error: "Email o contraseña incorrectos",
+                email: req.body.email, // Mensaje de error para el usuario
+              },
+            });
           }
         })
         .catch((err) => next(err));
@@ -64,5 +74,10 @@ module.exports.login = (req, res, next) => {
         res.clearCookie("express-cookie");
         res.redirect("/login");
       };
+
+
+      module.exports.main = (req, res, next) => {
+        res.render("auth/register")
+       }
 
       

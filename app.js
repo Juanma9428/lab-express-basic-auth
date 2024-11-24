@@ -14,12 +14,15 @@ const { sessionConfig, loggedUser } = require("./config/session.config");
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
 
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 app.use(sessionConfig);
 app.use(loggedUser);
+
+
 
 // default value for title local
 const projectName = 'lab-express-basic-auth';

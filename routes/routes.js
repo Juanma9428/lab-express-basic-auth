@@ -13,7 +13,7 @@ router.get("/login", authMiddleweares.isNoAutenticated, authMiddleweares.isNoAut
 router.post("/login", authMiddleweares.isNoAutenticated, authController.doLogin)
 router.get("/logout",authController.logout)
 router.get("/profile", authMiddleweares.isAutenticated, userController.profile)
-
+router.get("/main", authMiddleweares.isNoAutenticated,)
 
 
 

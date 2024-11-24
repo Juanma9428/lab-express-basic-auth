@@ -29,6 +29,7 @@ module.exports = (app) => {
   app.use(cookieParser());
 
   hbs.registerPartials(__dirname + "/../views/partials");
+  
 
   
 
