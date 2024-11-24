@@ -12,8 +12,9 @@ router.post("/register", authMiddleweares.isNoAutenticated, authController.doReg
 router.get("/login", authMiddleweares.isNoAutenticated, authMiddleweares.isNoAutenticated, authController.login)
 router.post("/login", authMiddleweares.isNoAutenticated, authController.doLogin)
 router.get("/logout",authController.logout)
-router.get("/profile", authMiddleweares.isAutenticated, userController.profile)
-router.get("/main", authMiddleweares.isNoAutenticated,)
+router.get("/main", authMiddleweares.isAutenticated, userController.profile)
+router.get("/private", authMiddleweares.isAutenticated, userController.private)
+
 
 
 

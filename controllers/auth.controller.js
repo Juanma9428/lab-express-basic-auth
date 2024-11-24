@@ -46,7 +46,7 @@ module.exports.login = (req, res, next) => {
             return user.checkPassword(password).then((match) => {
               if (match) {
                 req.session.userId = user.id; // genero cookie y session
-                res.redirect("/profile");
+                res.redirect("/main");
               } else {
                 res.render("auth/login", {
                   errors: {

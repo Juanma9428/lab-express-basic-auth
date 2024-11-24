@@ -1,7 +1,11 @@
 const User = require("../models/User.model");
 
 module.exports.profile = (req, res, next) =>{
-    res.render("users/profile");
+    res.render("users/main");
+}
+
+module.exports.private = (req, res, next) =>{
+    res.render("users/private");
 }
 
 module.exports.delete = (req, res, next)=>{
